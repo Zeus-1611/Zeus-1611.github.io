@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zeus Navarro Ramos · Administrador de sistemas y cloud junior</title>
+<meta name="description" content="CV de Zeus Navarro Ramos: (técnico ASIX con certificaciones en Azure y Cisco, y un homelab documentado en GitHub.) en proceso">
+<!--
+  CÓMO EDITARLO
+  1. Busca todo lo que esté entre [corchetes] y cámbialo por tus datos.
+  2. Cambia las URLs de GitHub, LinkedIn y correo en la sección "Contacto" y en la cabecera.
+  3. Cuando apruebes un examen, cambia data-estado="en-curso" por data-estado="obtenido" y pon la fecha.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#EDF0F4; --surface:#FFFFFF; --ink:#16202E; --muted:#556275; --line:#D3DAE3;
+  --accent:#0B5FD6; --accent-soft:#DCE8FB; --ok:#12794A; --ok-soft:#D9F1E5; --warn:#8A5A00; --warn-soft:#FBEBC8;
+  --head:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --body:"Hanken Grotesk","Segoe UI",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0E141C; --surface:#161E29; --ink:#E7ECF3; --muted:#9AA7B8; --line:#2A3544;
+    --accent:#6BA6FF; --accent-soft:#1B2D4A; --ok:#5ED19B; --ok-soft:#14352A; --warn:#F2C262; --warn-soft:#3A2D10;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0E141C; --surface:#161E29; --ink:#E7ECF3; --muted:#9AA7B8; --line:#2A3544;
+  --accent:#6BA6FF; --accent-soft:#1B2D4A; --ok:#5ED19B; --ok-soft:#14352A; --warn:#F2C262; --warn-soft:#3A2D10;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.6 var(--body);
+  padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+a{color:var(--accent);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:62rem;margin:0 auto;padding:0 1.25rem}
+header.hero{padding:4rem 0 2.5rem}
+.hero h1{font:800 clamp(2.6rem,8vw,4.75rem)/1 var(--head);letter-spacing:-.03em;margin:0 0 .75rem}
+.hero .role{font:600 clamp(1.15rem,3vw,1.5rem)/1.3 var(--head);color:var(--accent);margin:0 0 1.25rem}
+.hero .intro{max-width:40rem;color:var(--muted);margin:0 0 1.75rem}
+.links{display:flex;flex-wrap:wrap;gap:.6rem;padding:0;margin:0;list-style:none}
+.links a{display:inline-block;padding:.55rem 1rem;border:1.5px solid var(--ink);border-radius:999px;color:var(--ink);
+  text-decoration:none;font-weight:600;font-size:.95rem}
+.links a:hover{background:var(--ink);color:var(--bg)}
+.links a.main{background:var(--accent);border-color:var(--accent);color:#fff}
+.links a.main:hover{filter:brightness(1.1);background:var(--accent);color:#fff}
+nav.top{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
+nav.top ul{display:flex;gap:1.25rem;overflow-x:auto;list-style:none;margin:0;padding:.7rem 1.25rem;max-width:62rem;margin-inline:auto}
+nav.top a{color:var(--muted);text-decoration:none;font-weight:600;font-size:.95rem;white-space:nowrap}
+nav.top a:hover{color:var(--ink)}
+section{padding:2.75rem 0 .5rem}
+h2{font:700 1.75rem/1.2 var(--head);letter-spacing:-.015em;margin:0 0 1.25rem}
+h3{font:700 1.1rem/1.3 var(--head);margin:0}
+.muted{color:var(--muted)}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:1.25rem 1.4rem}
+
+/* Hoja de ruta de certificaciones: es una secuencia real, por eso lleva línea de tiempo */
+.roadmap{list-style:none;margin:0;padding:0;position:relative}
+.roadmap::before{content:"";position:absolute;left:11px;top:8px;bottom:8px;width:2px;background:var(--line)}
+.roadmap li{position:relative;padding:0 0 1.4rem 2.75rem}
+.roadmap li:last-child{padding-bottom:0}
+.roadmap .dot{position:absolute;left:3px;top:6px;width:18px;height:18px;border-radius:50%;background:var(--bg);border:3px solid var(--muted)}
+.roadmap li[data-estado="obtenido"] .dot{background:var(--ok);border-color:var(--ok)}
+.roadmap li[data-estado="en-curso"] .dot{border-color:var(--accent);background:var(--accent-soft)}
+.roadmap .row{display:flex;flex-wrap:wrap;align-items:baseline;gap:.4rem .8rem}
+.badge{font:600 .8rem/1 var(--body);padding:.3rem .6rem;border-radius:999px;background:var(--warn-soft);color:var(--warn)}
+li[data-estado="obtenido"] .badge{background:var(--ok-soft);color:var(--ok)}
+li[data-estado="en-curso"] .badge{background:var(--accent-soft);color:var(--accent)}
+.roadmap p{margin:.25rem 0 0;color:var(--muted);font-size:.98rem}
+
+.grid{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr))}
+.lab h3{margin-bottom:.35rem}
+.lab p{margin:0 0 .75rem;color:var(--muted);font-size:.97rem}
+.lab .badge{display:inline-block}
+.skills{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(14rem,1fr))}
+.skills h3{margin-bottom:.4rem}
+.skills ul{margin:0;padding-left:1.1rem;color:var(--muted)}
+.edu{display:grid;gap:1rem}
+.edu .when{color:var(--muted);font-size:.95rem}
+footer{padding:3rem 0 3.5rem;color:var(--muted);font-size:.95rem}
+.theme{background:none;border:1.5px solid var(--line);color:var(--muted);border-radius:999px;padding:.35rem .8rem;font:600 .85rem var(--body);cursor:pointer;margin-left:auto}
+.theme:hover{color:var(--ink);border-color:var(--ink)}
+@media (max-width:560px){header.hero{padding-top:2.5rem}}
+@media print{
+  nav.top,.theme,.links{display:none}
+  :root{--bg:#fff;--surface:#fff;--ink:#000;--muted:#333;--line:#bbb}
+  body{font-size:10.5pt} header.hero{padding:0 0 1rem} .card{break-inside:avoid}
+  section{padding-top:1.2rem}
+}
+</style>
+</head>
+<body>
+
+<nav class="top" aria-label="Secciones">
+  <ul>
+    <li><a href="#certificaciones">Certificaciones</a></li>
+    <li><a href="#homelab">Homelab</a></li>
+    <li><a href="#habilidades">Habilidades</a></li>
+    <li><a href="#formacion">Formación</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+    <li style="margin-left:auto"><button class="theme" id="theme" type="button" aria-label="Cambiar entre tema claro y oscuro">Tema</button></li>
+  </ul>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <h1>Zeus Navarro Ramos</h1>
+    <p class="role">Administrador de sistemas y cloud junior</p>
+    <p class="intro">Estudiante de 2º de ASIX en el instituto Carles Vallbona, Granollers. Hago mis prácticas en Marelli y preparo las certificaciones de Azure y Cisco. Monto un homelab con Active Directory, redes segmentadas y automatización, y documento cada paso en GitHub.</p>
+    <ul class="links">
+      <li><a class="main" href="https://github.com/Zeus-1611">GitHub</a></li>
+      <li><a href="mailto:zeusnavram@gmail.com">Correo</a></li>
+    </ul>
+  </div>
+</header>
+
+<main class="wrap">
+
+<section id="certificaciones">
+  <h2>Certificaciones</h2>
+  <p class="muted" style="margin-top:-.5rem">Hoja de ruta con fechas previstas. Las actualizo cuando apruebo cada examen.</p>
+  <ol class="roadmap">
+    <li data-estado="en-curso">
+      <span class="dot"></span>
+      <div class="row"><h3>Microsoft Azure Fundamentals (AZ-900)</h3><span class="badge">En curso · examen en noviembre de 2026</span></div>
+      <p>Conceptos cloud, servicios de Azure, identidad, seguridad, costes y gobierno.</p>
+    </li>
+    <li data-estado="planificado">
+      <span class="dot"></span>
+      <div class="row"><h3>Cisco Certified Network Associate (CCNA 200-301)</h3><span class="badge">Previsto · febrero de 2027</span></div>
+      <p>Direccionamiento y subnetting, VLANs, STP, OSPF, NAT, ACLs, VPN y seguridad de red.</p>
+    </li>
+    <li data-estado="planificado">
+      <span class="dot"></span>
+      <div class="row"><h3>[Azure Administrator (AZ-104) o AWS Solutions Architect Associate]</h3><span class="badge">Previsto · mayo de 2027</span></div>
+      <p>Administración y diseño de infraestructura en la nube. Elijo uno según el entorno de mi primer empleo.</p>
+    </li>
+  </ol>
+</section>
+
+<section id="homelab">
+  <h2>Proyectos de homelab</h2>
+  <p class="muted" style="margin-top:-.5rem">Cada nivel tiene su repositorio con diagrama de red, pasos y errores resueltos.</p>
+  <div class="grid">
+    <article class="card lab"><h3>Base de virtualización</h3><p>Proxmox o VirtualBox, Windows Server y Ubuntu Server, redes virtuales y snapshots.</p><span class="badge">Pendiente</span> <a href="https://github.com/[tu-usuario]/[repo-base]">Repositorio</a></article>
+    <article class="card lab"><h3>Active Directory</h3><p>Dominio, usuarios, GPOs, DNS, DHCP y servidor de ficheros con permisos.</p><span class="badge">Pendiente</span> <a href="https://github.com/[tu-usuario]/[repo-ad]">Repositorio</a></article>
+    <article class="card lab"><h3>Red y seguridad</h3><p>Firewall pfSense u OPNsense, VLANs, reglas y VPN con WireGuard.</p><span class="badge">Pendiente</span> <a href="https://github.com/[tu-usuario]/[repo-red]">Repositorio</a></article>
+    <article class="card lab"><h3>Linux de servicio</h3><p>Nginx, SSH con claves, scripts Bash de copia de seguridad y Docker.</p><span class="badge">Pendiente</span> <a href="https://github.com/[tu-usuario]/[repo-linux]">Repositorio</a></article>
+    <article class="card lab"><h3>Monitorización y backup</h3><p>Zabbix o Grafana con alertas, y copias de seguridad automáticas.</p><span class="badge">Pendiente</span> <a href="https://github.com/[tu-usuario]/[repo-monitor]">Repositorio</a></article>
+    <article class="card lab"><h3>Cloud híbrida y automatización</h3><p>Entra ID conectado al AD local, Ansible y Terraform.</p><span class="badge">Pendiente</span> <a href="https://github.com/[tu-usuario]/[repo-cloud]">Repositorio</a></article>
+  </div>
+  <p class="muted">Cuando termines un proyecto, cambia "Pendiente" por "Terminado" y borra los que no hagas.</p>
+</section>
+
+<section id="habilidades">
+  <h2>Habilidades</h2>
+  <div class="skills">
+    <div class="card"><h3>Sistemas</h3><ul><li>Windows Server y Active Directory</li><li>Linux</li><li>Virtualización con VirtualBox</li></ul></div>
+    <div class="card"><h3>Redes</h3><ul><li>Switching, VLANs y routing</li><li>Firewalls y VPN</li><li>Packet Tracer</li></ul></div>
+    <div class="card"><h3>Cloud y automatización</h3><ul><li>Azure (fundamentos)</li><li>Bash, [PowerShell]</li></ul></div>
+  </div>
+</section>
+
+<section id="formacion">
+  <h2>Formación y experiencia</h2>
+  <div class="edu">
+    <div class="card"><h3>Técnico Medio en Sistemas Microinformáticos y Red (SMX)</h3><div class="when">Instituto Carles Vallbona · 2023 – 2025</div></div>
+    <div class="card"><h3>Técnico Superior en Administración de Sistemas Informáticos en Red (ASIX)</h3><div class="when">Instituto Carles Vallbona · 2025 – 2027</div></div>
+    <div class="card"><h3>Prácticas · Marelli</h3><div class="when">Febrero 2025 – Febrero 2026</div><p class="muted" style="margin:.4rem 0 0">Realizo tareas de soporte técnico, gestión de servidores y mantenimiento de redes.</p></div>
+    <div class="card"><h3>Idiomas</h3><div class="when">Español: Nativo · Catalán: Nativo · Inglés: B2 sin cetificado · Francés: B1</div></div>
+  </div>
+</section>
+
+<section id="contacto">
+  <h2>Contacto</h2>
+  <p>Busco mi primer puesto como administrador de sistemas o técnico cloud. Escríbeme a <a href="mailto:zeusnavram@gmail.com">zeusnavram@gmail.com</a> o encuéntrame en <a href="https://github.com/Zeus-1611">GitHub</a>.</p>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">© <span id="year">2026</span> Zeus Navarro Ramos. Puedes imprimir esta página como PDF desde el navegador.</div>
+</footer>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+(function(){
+  var root = document.documentElement, btn = document.getElementById('theme');
+  try { var s = localStorage.getItem('theme'); if (s) root.setAttribute('data-theme', s); } catch(e){}
+  btn.addEventListener('click', function(){
+    var dark = root.getAttribute('data-theme') === 'dark' ||
+      (!root.getAttribute('data-theme') && matchMedia('(prefers-color-scheme: dark)').matches);
+    var next = dark ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem('theme', next); } catch(e){}
+  });
+})();
+</script>
+</body>
+</html>
